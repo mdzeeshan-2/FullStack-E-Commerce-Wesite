@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+.label {
+  @apply absolute top-0 left-0 w-full text-gray-400 transition-all duration-200 cursor-text uppercase;
+}
+
+.input {
+  @apply w-full outline-none py-2 shadow-none text-black  border-b border-gray-400;
+}
+.input:focus ~ label,
+.input:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: #000;
+}
+
+.form-error input,
+.form-error textarea {
+  @apply w-full outline-none py-2 shadow-none text-black  border-b border-red-400;
+}
+
+.form-error label {
+  @apply absolute top-0 left-0 w-full text-red-400 transition-all duration-200 cursor-text uppercase;
+}
+/* Spinner css */
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form-error input {
+  @apply w-full outline-none py-2 shadow-none text-black  border-b border-red-400;
+}
+
+tr > *:not(:first-child) {
+  padding: 16px;
+}
